@@ -125,18 +125,16 @@ var numbers = [];
 const addBtn = document.getElementById('addBtn');
 
 addBtn.addEventListener('click', function(){
-    numbers.push(document.getElementById('num').value);
-    document.getElementsByName('num').value = "";
-    //kako da se resetira koga se klika buttonot
-})
-
-const displayBtn = document.getElementById('displayBtn');
-
-displayBtn.addEventListener('click', function(){
-    for(var i = 0; i < numbers.length; i++){
-        document.getElementById('arr').innerHTML = document.getElementById('arr').innerHTML + numbers[i] + ", ";
+    if(document.getElementById('num').value == ""){
+        return 0;
     }
+   
+    numbers.push(document.getElementById('num').value);
+    document.getElementById('arr').innerHTML = document.getElementById('arr').innerHTML + document.getElementById('num').value + ", ";
+    document.getElementById('num').value = "";
+
 })
+
 
 
 
